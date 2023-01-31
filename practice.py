@@ -1,4 +1,6 @@
-from database import add_entry, get_entries
+
+
+from database import add_entry, get_entries, create_table
 
 menu = '''
 Please Select one of the following options:
@@ -9,13 +11,14 @@ Please Select one of the following options:
 Your selection: 
 '''
 print('Welcome to the programming diary!')
+create_table()
 
 def prompt_new_entry():
   add_entry(input('What have you learned today? '), input('Enter the date: '))
 
 def view_entries(entries):
   for entry in entries:
-      print(f"{entry['date']}\n{entry['content']}\n\n")
+      print(f"\n{entry['date']}\n{entry['content']}\n")
 
 # NON-WALRUS
 # while user_input != '3':
